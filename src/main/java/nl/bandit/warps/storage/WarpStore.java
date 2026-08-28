@@ -1,0 +1,9 @@
+package nl.bandit.warps.storage;
+import nl.bandit.warps.model.Warp; import java.io.*; import java.util.*; import org.bukkit.*; import org.bukkit.configuration.*; import org.bukkit.configuration.file.*;
+public final class WarpStore {
+ private final File file; private final Map<String,Warp> data=new HashMap<>();
+ public WarpStore(File folder){file=new File(folder,"warps.yml"); load();}
+ public Warp get(String name){return data.get(name.toLowerCase(Locale.ROOT));} public Collection<Warp> all(){return data.values();} public void put(Warp w){data.put(w.id,w);save();} public void remove(Warp w){data.remove(w.id);save();}
+ private void load(){YamlConfiguration y=YamlConfiguration.loadConfiguration(file); ConfigurationSection root=y.getConfigurationSection("warps"); if(root==null)return; for(String id:root.getKeys(false)){ConfigurationSection s=root.getConfigurationSection(id);try{UUID owner=UUID.fromString(s.getString("owner"));World world=Bukkit.getWorld(s.getString("world"));Warp w=new Warp(id,owner,s.getString("name"),new Location(world,s.getDouble("x"),s.getDouble("y"),s.getDouble("z"),(float)s.getDouble("yaw"),(float)s.getDouble("pitch")));w.description=s.getString("description","");w.icon=s.getString("icon","default");w.isPublic=s.getBoolean("public",true);w.visitors=s.getInt("visitors");data.put(id,w);}catch(Exception ignored){}}}
+ public void save(){YamlConfiguration y=new YamlConfiguration();for(Warp w:data.values()){String p="warps."+w.id+".";y.set(p+"owner",w.owner.toString());y.set(p+"name",w.name);y.set(p+"description",w.description);y.set(p+"icon",w.icon);y.set(p+"public",w.isPublic);y.set(p+"visitors",w.visitors);y.set(p+"world",w.location.getWorld().getName());y.set(p+"x",w.location.getX());y.set(p+"y",w.location.getY());y.set(p+"z",w.location.getZ());y.set(p+"yaw",w.location.getYaw());y.set(p+"pitch",w.location.getPitch());}try{y.save(file);}catch(IOException e){throw new RuntimeException(e);}}
+}
