@@ -1,0 +1,12 @@
+name: BanditWarps
+version: 1.0.0
+main: nl.bandit.warps.BanditWarpsPlugin
+api-version: '1.21'
+author: Bandit
+commands:
+  pwarp:
+    description: Player warp beheer
+    aliases: [pwarps, playerwarp, playerwarps]
+permissions:
+  banditwarps.create: {default: true}
+  banditwarps.admin: {default: op}
