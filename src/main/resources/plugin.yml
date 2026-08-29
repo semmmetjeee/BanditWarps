@@ -1,12 +1,27 @@
 name: BanditWarps
-version: 1.0.0
+version: '${project.version}'
 main: nl.bandit.warps.BanditWarpsPlugin
 api-version: '1.21'
 author: Bandit
+description: Premium, volledig configureerbare player warps voor Paper.
 commands:
   pwarp:
-    description: Player warp beheer
-    aliases: [pwarps, playerwarp, playerwarps]
+    description: Open of beheer player warps
+    aliases:
+      - pwarps
+      - playerwarp
+      - playerwarps
+    usage: /pwarp
 permissions:
-  banditwarps.create: {default: true}
-  banditwarps.admin: {default: op}
+  banditwarps.use:
+    default: true
+  banditwarps.create:
+    default: true
+  banditwarps.admin:
+    default: op
+  banditwarps.icon.default:
+    default: true
+  banditwarps.icon.home:
+    default: true
+  banditwarps.icon.shop:
+    default: true
