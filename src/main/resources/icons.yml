@@ -1,13 +1,9 @@
+# Iconen bepalen alleen het item-materiaal in de warp-lijst.
+# Voeg hier eigen iconen toe; permissie: banditwarps.icon.<naam>
 icons:
   default:
     material: ENDER_PEARL
-    name: '&d%warp_name%'
-    lore: ['&7%warp_description%', '&8Bezoekers: &f%warp_visitors%', '', '&eKlik om te teleporteren']
   home:
     material: RED_BED
-    name: '&c%warp_name%'
-    lore: ['&7%warp_description%', '&8Bezoekers: &f%warp_visitors%']
   shop:
     material: EMERALD
-    name: '&a%warp_name%'
-    lore: ['&7%warp_description%', '&8Bezoekers: &f%warp_visitors%']
