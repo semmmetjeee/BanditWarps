@@ -21,8 +21,8 @@ jobs:
       - name: Upload plugin package
         uses: actions/upload-artifact@v4
         with:
-          name: BanditWarps-1.1.1
+          name: BanditWarps-1.1.2
           path: |
             target/BanditWarps.jar
-            target/BanditWarps-1.1.1.zip
+            target/BanditWarps-1.1.2.zip
           if-no-files-found: error

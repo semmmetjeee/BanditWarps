@@ -281,13 +281,11 @@ text-input:
   description:
     title: '&6&lBeschrijving wijzigen'
     body:
-    - '&7Vertel spelers wat ze bij deze warp kunnen vinden.'
-    - '&8Een duidelijke beschrijving trekt meer bezoekers.'
-    label: '&fWarpbeschrijving'
+    - '&7Schrijf één korte zin die direct duidelijk is.'
+    - '&8Voorbeeld: Beste shop ooit!'
+    label: '&fKorte beschrijving'
     input-width: 420
     button-width: 150
-    max-lines: 4
-    height: 100
     confirm: '&a&lBeschrijving opslaan'
     confirm-tooltip: '&7Gebruik deze beschrijving voor je warp'
     cancel: '&cAnnuleren'

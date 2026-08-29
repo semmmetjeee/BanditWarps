@@ -7,7 +7,7 @@ Een uitgebreide, volledig configureerbare player-warps plugin voor Paper 26.2 en
 - Professionele browser met paginering en vier sorteermethodes
 - Openbare en privéwarps
 - Echte edit-sessies: opslaan bevestigt, annuleren gooit wijzigingen weg
-- Naam- en beschrijvingsinvoer via Paper's native Minecraft Dialog API
+- Naam- en korte éénregelige beschrijvingsinvoer via Paper's native Minecraft Dialog API
 - Configureerbare iconen met permissies en custom model data
 - Veilige menu's met interne actie-ID's; items kunnen niet worden meegenomen
 - Persistente unieke bezoekerstelling met configureerbare cooldown
@@ -25,7 +25,7 @@ mvn clean verify
 Output:
 
 - `target/BanditWarps.jar`
-- `target/BanditWarps-1.1.1.zip`
+- `target/BanditWarps-1.1.2.zip`
 
 ## Commando's
 

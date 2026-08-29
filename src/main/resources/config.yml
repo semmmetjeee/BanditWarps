@@ -5,7 +5,8 @@ validation:
   name-min-length: 3
   name-max-length: 20
   name-regex: '[A-Za-z0-9_-]+'
-  description-max-length: 100
+  # Korte beschrijving van één regel; toegestane waarde: 1 t/m 50.
+  description-max-length: 50
 limits:
   default: 5
   permission-tiers:

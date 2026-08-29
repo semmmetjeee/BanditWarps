@@ -42,19 +42,13 @@ public final class TextInputService {
         String section = "text-input." + (name ? "name" : "description");
         int maxLength = name
                 ? plugin.getConfig().getInt("validation.name-max-length", 20)
-                : plugin.getConfig().getInt("validation.description-max-length", 100);
+                : descriptionMaxLength();
 
         TextDialogInput.Builder input = DialogInput.text(INPUT_KEY, component(section + ".label", name ? "&fNieuwe warpnaam" : "&fBeschrijving"))
                 .width(clamp(plugin.menus().dialogInt(section + ".input-width", 340), 1, 1024))
                 .labelVisible(true)
                 .initial(initialValue == null ? "" : initialValue)
                 .maxLength(Math.max(1, maxLength));
-
-        if (!name) {
-            int maxLines = Math.max(1, plugin.menus().dialogInt(section + ".max-lines", 4));
-            int height = clamp(plugin.menus().dialogInt(section + ".height", 100), 1, 512);
-            input.multiline(TextDialogInput.MultilineOptions.create(maxLines, height));
-        }
 
         DialogAction confirmAction = DialogAction.customClick(
                 (response, audience) -> {
@@ -97,7 +91,7 @@ public final class TextInputService {
     }
 
     private void handleSubmit(Player player, Warp draft, boolean name, String rawValue) {
-        String value = rawValue.trim();
+        String value = name ? rawValue.trim() : singleLine(rawValue);
         if (name) {
             int min = plugin.getConfig().getInt("validation.name-min-length", 3);
             int max = plugin.getConfig().getInt("validation.name-max-length", 20);
@@ -113,7 +107,7 @@ public final class TextInputService {
             }
             draft.name(value);
         } else {
-            int max = plugin.getConfig().getInt("validation.description-max-length", 100);
+            int max = descriptionMaxLength();
             if (value.length() > max) {
                 plugin.message(player, "description-too-long", Map.of("%max%", String.valueOf(max)));
                 reopen(player, draft, false, rawValue);
@@ -136,6 +130,14 @@ public final class TextInputService {
             plugin.getLogger().warning("Ongeldige validation.name-regex in config.yml; standaardvalidatie wordt gebruikt.");
             return value.matches("[A-Za-z0-9_-]+");
         }
+    }
+
+    private int descriptionMaxLength() {
+        return clamp(plugin.getConfig().getInt("validation.description-max-length", 50), 1, 50);
+    }
+
+    private String singleLine(String value) {
+        return value.replace('\r', ' ').replace('\n', ' ').replaceAll("\\s+", " ").trim();
     }
 
     private void reopen(Player player, Warp draft, boolean name, String value) {
