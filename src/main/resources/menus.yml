@@ -1,5 +1,5 @@
 browser:
-  title: '&8Bandit &6Warps'
+  title: '&0ᴘʟᴀʏᴇʀ ᴡᴀʀᴘꜱ'
   rows: 6
   warp-start-slot: 10
   border:
@@ -8,28 +8,38 @@ browser:
       material: BLACK_STAINED_GLASS_PANE
       name: ' '
   warp-item:
-    name: '&d%warp_name%'
+    name: '&6&l%warp_name%'
     lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
       - '&7%warp_description%'
-      - '&8Bezoekers: &f%warp_visitors%'
-      - '&8Status: %warp_status%'
       - ''
-      - '&eKlik om te teleporteren'
+      - '&eMaker: &f%warp_owner%'
+      - '&eAangemaakt: &f%warp_created%'
+      - '&eBezoekers: &f%warp_visitors%'
+      - '&eStatus: %warp_status%'
+      - '&8━━━━━━━━━━━━━━━━━━━━'
+      - '&a&l▶ &fKlik om te teleporteren'
   items:
     sort:
       slot: 47
       material: HOPPER
-      name: '&eSorteren: &f%sort%'
+      name: '&e&lSorteren'
       lore:
-        - '&7Klik voor volgende sortering'
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Huidig: &f%sort%'
+        - ''
+        - '&eKlik om te wisselen'
     your-warps:
       slot: 49
-      material: CHEST
-      name: '&6Jouw warps'
+      material: NETHER_STAR
+      name: '&6&lJouw warps'
       lore:
-        - '&7Beheer je eigen warps'
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Beheer al je eigen warps'
+        - ''
+        - '&eKlik om te openen'
 settings:
-  title: '&8Pwarp &6Instellingen'
+  title: '&0ᴡᴀʀᴘ ɪɴꜱᴛᴇʟʟɪɴɢᴇɴ'
   rows: 5
   border:
     enabled: true
@@ -37,34 +47,59 @@ settings:
       material: ORANGE_STAINED_GLASS_PANE
       name: ' '
   items:
+    name:
+      slot: 11
+      material: NAME_TAG
+      name: '&e&lNaam wijzigen'
+      lore:
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Huidig: &f%warp_name%'
+        - ''
+        - '&eKlik om aan te passen'
     status:
       slot: 20
       material: LEVER
-      name: '&eStatus: %warp_status%'
+      name: '&e&lStatus: %warp_status%'
       lore:
-        - '&7Klik om te wisselen'
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Openbaar: iedereen kan komen'
+        - '&7Privé: alleen jij en admins'
+        - ''
+        - '&eKlik om te wisselen'
     description:
       slot: 22
-      material: BOOK
-      name: '&eBeschrijving'
+      material: WRITABLE_BOOK
+      name: '&e&lBeschrijving'
       lore:
-        - '%warp_description%'
-        - '&7Gebruik /pwarp description <warp> <tekst>'
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7%warp_description%'
+        - ''
+        - '&eKlik om aan te passen'
     icon:
       slot: 24
       material: ITEM_FRAME
-      name: '&ePwarp icoon'
+      name: '&e&lPwarp icoon'
       lore:
+        - '&8━━━━━━━━━━━━━━━━━━━━'
         - '&7Huidig: &f%warp_icon%'
-        - '&7Klik om te kiezen'
+        - ''
+        - '&eKlik om te kiezen'
     confirm:
-      slot: 40
+      slot: 39
       material: LIME_DYE
-      name: '&aOpslaan'
+      name: '&a&lOpslaan'
       lore:
-        - '&7Sla instellingen op'
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Sla je wijzigingen op'
+    cancel:
+      slot: 41
+      material: BARRIER
+      name: '&c&lAnnuleren'
+      lore:
+        - '&8━━━━━━━━━━━━━━━━━━━━'
+        - '&7Sluit dit menu zonder actie'
 icons:
-  title: '&8Kies een &6Icoon'
+  title: '&0ᴋɪᴇꜱ ᴇᴇɴ ɪᴄᴏᴏɴ'
   rows: 6
   start-slot: 10
   border:
@@ -72,8 +107,22 @@ icons:
     item:
       material: BLACK_STAINED_GLASS_PANE
       name: ' '
+  select-item:
+    name: '&6&l%icon%'
+    lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
+      - '&7Gebruik dit icoon voor'
+      - '&7je player warp.'
+      - ''
+      - '&a&l▶ &fKlik om te selecteren'
+  back:
+    slot: 49
+    material: ARROW
+    name: '&e&lTerug'
+    lore:
+      - '&7Terug naar instellingen'
 owned:
-  title: '&8Jouw &6Warps'
+  title: '&0ᴊᴏᴜᴡ ᴡᴀʀᴘꜱ'
   rows: 6
   warp-start-slot: 10
   border:
@@ -82,10 +131,27 @@ owned:
       material: BLACK_STAINED_GLASS_PANE
       name: ' '
   warp-item:
-    name: '&d%warp_name%'
+    name: '&6&l%warp_name%'
     lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
       - '&7%warp_description%'
-      - '&8Bezoekers: &f%warp_visitors%'
-      - '&8Status: %warp_status%'
       - ''
-      - '&eKlik om te bewerken'
+      - '&eBezoekers: &f%warp_visitors%'
+      - '&eStatus: %warp_status%'
+      - ''
+      - '&eKlik om te beheren'
+text-input:
+  name-title: '&0Wijzig warpnaam'
+  description-title: '&0Wijzig beschrijving'
+  accept:
+    slot: 2
+    material: LIME_DYE
+    name: '&a&lOpslaan'
+    lore:
+      - '&7Klik om je tekst op te slaan'
+  cancel:
+    slot: 1
+    material: BARRIER
+    name: '&c&lAnnuleren'
+    lore:
+      - '&7Ga terug zonder wijzigingen'
