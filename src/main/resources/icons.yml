@@ -1,9 +1,49 @@
-# Iconen bepalen alleen het item-materiaal in de warp-lijst.
-# Voeg hier eigen iconen toe; permissie: banditwarps.icon.<naam>
+# Een icoon bepaalt uitsluitend het item van de warp en de weergavenaam in de iconenkiezer.
+# Permissie per icoon: banditwarps.icon.<id>
+# Optioneel: custom-model-data: 123
 icons:
   default:
     material: ENDER_PEARL
+    display-name: '&dEnderparel'
   home:
     material: RED_BED
+    display-name: '&cThuis'
   shop:
     material: EMERALD
+    display-name: '&aWinkel'
+  castle:
+    material: STONE_BRICKS
+    display-name: '&7Kasteel'
+  nature:
+    material: OAK_SAPLING
+    display-name: '&aNatuur'
+  farm:
+    material: WHEAT
+    display-name: '&eBoerderij'
+  pvp:
+    material: DIAMOND_SWORD
+    display-name: '&cPvP-arena'
+  parkour:
+    material: FEATHER
+    display-name: '&fParkour'
+  casino:
+    material: GOLD_INGOT
+    display-name: '&6Casino'
+  event:
+    material: FIREWORK_ROCKET
+    display-name: '&dEvenement'
+  village:
+    material: BELL
+    display-name: '&eDorp'
+  mine:
+    material: DIAMOND_PICKAXE
+    display-name: '&bMijn'
+  nether:
+    material: NETHERRACK
+    display-name: '&cNether'
+  end:
+    material: END_STONE
+    display-name: '&eThe End'
+  ocean:
+    material: HEART_OF_THE_SEA
+    display-name: '&bOceaan'
