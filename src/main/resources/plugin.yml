@@ -1,7 +1,7 @@
 name: BanditWarps
 version: '${project.version}'
 main: nl.bandit.warps.BanditWarpsPlugin
-api-version: '1.21'
+api-version: '26.2'
 author: Bandit
 description: Premium, volledig configureerbare player warps voor Paper.
 commands:

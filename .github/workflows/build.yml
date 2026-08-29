@@ -14,15 +14,15 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '25'
           cache: maven
       - name: Compile and package
         run: mvn --batch-mode --no-transfer-progress clean verify
       - name: Upload plugin package
         uses: actions/upload-artifact@v4
         with:
-          name: BanditWarps-1.1.0
+          name: BanditWarps-1.1.1
           path: |
             target/BanditWarps.jar
-            target/BanditWarps-1.1.0.zip
+            target/BanditWarps-1.1.1.zip
           if-no-files-found: error

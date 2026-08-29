@@ -266,16 +266,29 @@ delete-confirm:
       lore:
       - '&7Behoud deze warp'
 text-input:
-  name-title: '&0ɴᴀᴀᴍ ᴡɪᴊᴢɪɢᴇɴ'
-  description-title: '&0ʙᴇꜱᴄʜʀɪᴊᴠɪɴɢ ᴡɪᴊᴢɪɢᴇɴ'
-  accept:
-    material: LIME_DYE
-    name: '&a&lOpslaan'
-    lore:
-    - '&7Klik om de ingevoerde tekst te bewaren'
-    glow: true
-  cancel:
-    material: BARRIER
-    name: '&c&lAnnuleren'
-    lore:
-    - '&7Terug zonder deze tekst te bewaren'
+  name:
+    title: '&6&lWarpnaam wijzigen'
+    body:
+    - '&7Geef je warp een korte, unieke naam.'
+    - '&8Toegestaan: letters, cijfers, _ en -'
+    label: '&fNieuwe warpnaam'
+    input-width: 340
+    button-width: 150
+    confirm: '&a&lNaam opslaan'
+    confirm-tooltip: '&7Gebruik deze naam voor je warp'
+    cancel: '&cAnnuleren'
+    cancel-tooltip: '&7Terug zonder de naam te wijzigen'
+  description:
+    title: '&6&lBeschrijving wijzigen'
+    body:
+    - '&7Vertel spelers wat ze bij deze warp kunnen vinden.'
+    - '&8Een duidelijke beschrijving trekt meer bezoekers.'
+    label: '&fWarpbeschrijving'
+    input-width: 420
+    button-width: 150
+    max-lines: 4
+    height: 100
+    confirm: '&a&lBeschrijving opslaan'
+    confirm-tooltip: '&7Gebruik deze beschrijving voor je warp'
+    cancel: '&cAnnuleren'
+    cancel-tooltip: '&7Terug zonder de beschrijving te wijzigen'
