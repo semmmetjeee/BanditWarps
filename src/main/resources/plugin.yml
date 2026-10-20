@@ -2,15 +2,12 @@ name: BanditWarps
 version: '${project.version}'
 main: nl.bandit.warps.BanditWarpsPlugin
 api-version: '26.2'
-author: Bandit
-description: Premium, volledig configureerbare player warps voor Paper.
 commands:
   pwarp:
     description: Open of beheer player warps
     aliases:
       - pwarps
-      - playerwarp
-      - playerwarps
+      - spelerwarps
     usage: /pwarp
 permissions:
   banditwarps.use:
