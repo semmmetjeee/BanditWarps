@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public final class MenuService {
-    private static final List<String> SORT_NAMES=List.of("Meeste bezoekers","Nieuwste","Oudste","Willekeurig");
+    private static final List<String> SORT_NAMES=List.of("Meeste Bezoekers","Nieuwste Warps","Oudste Warps","Willekeurig");
     private final BanditWarpsPlugin plugin;
     private final NamespacedKey actionKey,warpKey,iconKey;
     private final Map<UUID,EditSession> edits=new HashMap<>();
