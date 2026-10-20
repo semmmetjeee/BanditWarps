@@ -53,7 +53,8 @@ browser:
       material: HOPPER
       name: '&6&lSorteren'
       lore:
-      - '&7Huidig: &f%sort%'
+      - '&#ffdadaHuidig: %sort%'
+      - '&#dadadaVolgende: %sort_next%'
       - ''
       - '&eKlik om te wisselen'
     your-warps:
