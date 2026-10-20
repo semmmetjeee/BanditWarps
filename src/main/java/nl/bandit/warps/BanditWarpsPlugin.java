@@ -10,6 +10,14 @@ public final class BanditWarpsPlugin extends JavaPlugin {
  private void loadExtraConfigs(){messages=YamlConfiguration.loadConfiguration(new File(getDataFolder(),"messages.yml"));commands=YamlConfiguration.loadConfiguration(new File(getDataFolder(),"commands.yml"));}
  public WarpStore warps(){return warps;} public MenuService menus(){return menus;} public TextInputService input(){return input;}
  public String word(String key){return commands.getString("subcommands."+key,key).toLowerCase();}
- public void message(CommandSender target,String key,Map<String,String> variables){String value=messages.getString(key,"&cOntbrekend bericht: "+key);for(Map.Entry<String,String> entry:variables.entrySet())value=value.replace(entry.getKey(),entry.getValue());target.sendMessage(ChatColor.translateAlternateColorCodes('&',messages.getString("prefix","&6&lBanditWarps &8» ")+value));}
+ private String color(String value){
+  if(value==null)return "";
+  java.util.regex.Matcher matcher=java.util.regex.Pattern.compile("(?i)&#([0-9a-f]{6})").matcher(value);
+  StringBuffer result=new StringBuffer();
+  while(matcher.find())matcher.appendReplacement(result,java.util.regex.Matcher.quoteReplacement(ChatColor.of("#"+matcher.group(1)).toString()));
+  matcher.appendTail(result);
+  return ChatColor.translateAlternateColorCodes('&',result.toString());
+ }
+ public void message(CommandSender target,String key,Map<String,String> variables){String value=messages.getString(key,"&cOntbrekend bericht: "+key);for(Map.Entry<String,String> entry:variables.entrySet())value=value.replace(entry.getKey(),entry.getValue());target.sendMessage(color(messages.getString("prefix","&6&lBanditWarps &8» ")+value));}
  public void reloadAll(){reloadConfig();loadExtraConfigs();menus.reload();warps.saveAll();}
 }
