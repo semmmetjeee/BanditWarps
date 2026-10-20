@@ -23,7 +23,7 @@ public final class MenuService {
     private YamlConfiguration menus,icons;
 
     public MenuService(BanditWarpsPlugin plugin){this.plugin=plugin;actionKey=new NamespacedKey(plugin,"action");warpKey=new NamespacedKey(plugin,"warp-id");iconKey=new NamespacedKey(plugin,"icon-id");reload();}
-    public void reload(){menus=YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(),"menus.yml"));icons=YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(),"icons.yml"));}
+    public void reload(){File guiFile=new File(plugin.getDataFolder(),"gui.yml");File menusFile=new File(plugin.getDataFolder(),"menus.yml");menus=YamlConfiguration.loadConfiguration(guiFile.isFile()?guiFile:menusFile);icons=YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(),"icons.yml"));}
     public void beginEdit(Player player,Warp original,boolean newWarp){edits.put(player.getUniqueId(),new EditSession(original,original.copy(),newWarp));openSettings(player);}
     public EditSession edit(Player player){return edits.get(player.getUniqueId());}
     public void cancelEdit(Player player){edits.remove(player.getUniqueId());player.closeInventory();plugin.message(player,"editor-cancelled",Map.of());}
