@@ -14,7 +14,12 @@ public final class BanditWarpsPlugin extends JavaPlugin {
   if(value==null)return "";
   java.util.regex.Matcher matcher=java.util.regex.Pattern.compile("(?i)&#([0-9a-f]{6})").matcher(value);
   StringBuffer result=new StringBuffer();
-  while(matcher.find())matcher.appendReplacement(result,java.util.regex.Matcher.quoteReplacement(ChatColor.of("#"+matcher.group(1)).toString()));
+  while(matcher.find()){
+   String hex=matcher.group(1);
+   StringBuilder legacy=new StringBuilder("§x");
+   for(char digit:hex.toCharArray())legacy.append('§').append(digit);
+   matcher.appendReplacement(result,java.util.regex.Matcher.quoteReplacement(legacy.toString()));
+  }
   matcher.appendTail(result);
   return ChatColor.translateAlternateColorCodes('&',result.toString());
  }
