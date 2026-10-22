@@ -130,6 +130,17 @@ owned:
       name: '&e&lVorige pagina'
       lore:
       - '&7Pagina &f%page%&7/&f%pages%'
+    create-warp:
+      slot: 41
+      material: NETHER_STAR
+      name: '&a&lWarp aanmaken'
+      lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
+      - '&7Maak een nieuwe warp aan'
+      - '&7en stel direct de instellingen in.'
+      - ''
+      - '&eKlik om te beginnen'
+      glow: true
     back:
       slot: 49
       material: OAK_DOOR
