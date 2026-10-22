@@ -35,11 +35,19 @@ public final class TextInputService {
     }
 
     public void open(Player player, Warp draft, boolean name) {
-        open(player, draft, name, name ? draft.name() : draft.description());
+        open(player, draft, name, name ? draft.name() : draft.description(),
+                "text-input." + (name ? "name" : "description"));
+    }
+
+    public void openCreateName(Player player, Warp draft) {
+        open(player, draft, true, "", "dialogs.givename");
     }
 
     private void open(Player player, Warp draft, boolean name, String initialValue) {
-        String section = "text-input." + (name ? "name" : "description");
+        open(player, draft, name, initialValue, "text-input." + (name ? "name" : "description"));
+    }
+
+    private void open(Player player, Warp draft, boolean name, String initialValue, String section) {
         int maxLength = name
                 ? plugin.getConfig().getInt("validation.name-max-length", 20)
                 : descriptionMaxLength();
