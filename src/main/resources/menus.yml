@@ -67,6 +67,17 @@ browser:
       - '&7de plekken van andere spelers.'
       - ''
       - '&eKlik op een warp om erheen te gaan.'
+    create-warp:
+      slot: 41
+      material: NETHER_STAR
+      name: '&a&lWarp aanmaken'
+      lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
+      - '&7Maak een nieuwe warp aan'
+      - '&7en stel direct de instellingen in.'
+      - ''
+      - '&eKlik om te beginnen'
+      glow: true
     your-warps:
       slot: 49
       material: NETHER_STAR
