@@ -312,3 +312,16 @@ text-input:
     confirm-tooltip: '&7Gebruik deze beschrijving voor je warp'
     cancel: '&cAnnuleren'
     cancel-tooltip: '&7Terug zonder de beschrijving te wijzigen'
+
+dialogs:
+  givename:
+    title: '&#3bd9ff&lNAAM INSTELLEN'
+    body:
+    - '&fGeef je warp een korte, unieke naam.'
+    label: '&fNieuwe warpnaam'
+    input-width: 340
+    button-width: 150
+    confirm: '&#00ff00&lNAAM OPSLAAN'
+    confirm-tooltip: '&#f6d151Gebruik deze naam voor je warp'
+    cancel: '&#ff0000&lANNULEREN'
+    cancel-tooltip: '&#f6d151Terug zonder de naam te wijzigen'
