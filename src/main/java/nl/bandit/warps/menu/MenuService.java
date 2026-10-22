@@ -35,7 +35,7 @@ public final class MenuService {
         String name="Warp"+UUID.randomUUID().toString().replace("-","").substring(0,8);
         Warp warp=new Warp(UUID.randomUUID().toString(),player.getUniqueId(),name,player.getLocation());
         edits.put(player.getUniqueId(),new EditSession(warp,warp.copy(),true));
-        plugin.input().openCreateName(player,warp);
+        plugin.input().openCreateName(player,edit(player).draft());
     }
     public EditSession edit(Player player){return edits.get(player.getUniqueId());}
     public void cancelEdit(Player player){edits.remove(player.getUniqueId());player.closeInventory();plugin.message(player,"editor-cancelled",Map.of());}
