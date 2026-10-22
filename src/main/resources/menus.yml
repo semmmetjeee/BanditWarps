@@ -57,6 +57,16 @@ browser:
       - '&#dadadaVolgende: %sort_next%'
       - ''
       - '&eKlik om te wisselen'
+    info:
+      slot: 4
+      material: KNOWLEDGE_BOOK
+      name: '&b&lInformatie'
+      lore:
+      - '&8━━━━━━━━━━━━━━━━━━━━'
+      - '&7Bekijk openbare warps en ontdek'
+      - '&7de plekken van andere spelers.'
+      - ''
+      - '&eKlik op een warp om erheen te gaan.'
     your-warps:
       slot: 49
       material: NETHER_STAR
